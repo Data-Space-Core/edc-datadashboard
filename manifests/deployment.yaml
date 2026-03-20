@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: edc-datadashboard
-          image: REGISTRY/edc-datadashboard:latest
+          image: ghcr.io/data-space-core/edc-datadashboard:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
