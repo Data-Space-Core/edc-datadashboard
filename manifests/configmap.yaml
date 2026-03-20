@@ -5,71 +5,70 @@ metadata:
   namespace: edc-datadashboard
 data:
   app-config.json: |
+{
+  "appTitle": "EDC Dashboard",
+  "healthCheckIntervalSeconds": 30,
+  "enableUserConfig": true,
+  "initialTheme": "light",
+  "menuItems": [
     {
-      "appTitle": "EDC Dashboard",
-      "healthCheckIntervalSeconds": 30,
-      "enableUserConfig": false,
-      "initialTheme": "light",
-      "menuItems": [
-        {
-          "text": "Home",
-          "materialSymbol": "home_app_logo",
-          "routerPath": "home",
-          "divider": true
-        },
-        {
-          "text": "Catalog",
-          "materialSymbol": "book_ribbon",
-          "routerPath": "catalog",
-          "viewDescription": "Browse datasets from other connectors."
-        },
-        {
-          "text": "Assets",
-          "materialSymbol": "deployed_code_update",
-          "routerPath": "assets",
-          "viewDescription": "Create, edit and delete assets."
-        },
-        {
-          "text": "Policy Definitions",
-          "materialSymbol": "policy",
-          "routerPath": "policies",
-          "viewDescription": "Create, edit and delete policy definitions."
-        },
-        {
-          "text": "Contract Definitions",
-          "materialSymbol": "contract_edit",
-          "routerPath": "contract-definitions",
-          "viewDescription": "Create and manage contract definitions.",
-          "divider": true
-        },
-        {
-          "text": "Contracts",
-          "materialSymbol": "handshake",
-          "routerPath": "contracts",
-          "viewDescription": "Browse completed contract negotiations."
-        },
-        {
-          "text": "Transfer History",
-          "materialSymbol": "schedule_send",
-          "routerPath": "transfer-history",
-          "viewDescription": "Browse transfer processes."
-        }
-      ]
+      "text": "Home",
+      "materialSymbol": "home_app_logo",
+      "routerPath": "home",
+      "divider": true
+    },
+    {
+      "text": "Catalog",
+      "materialSymbol": "book_ribbon",
+      "routerPath": "catalog",
+      "viewDescription": "Browse datasets from other connectors."
+    },
+    {
+      "text": "Assets",
+      "materialSymbol": "deployed_code_update",
+      "routerPath": "assets",
+      "viewDescription": "Create, edit and delete assets."
+    },
+    {
+      "text": "Policy Definitions",
+      "materialSymbol": "policy",
+      "routerPath": "policies",
+      "viewDescription": "Create, edit and delete policy definitions."
+    },
+    {
+      "text": "Contract Definitions",
+      "materialSymbol": "contract_edit",
+      "routerPath": "contract-definitions",
+      "viewDescription": "Create and manage contract definitions.",
+      "divider": true
+    },
+    {
+      "text": "Contracts",
+      "materialSymbol": "handshake",
+      "routerPath": "contracts",
+      "viewDescription": "Browse completed contract negotiations."
+    },
+    {
+      "text": "Transfer History",
+      "materialSymbol": "schedule_send",
+      "routerPath": "transfer-history",
+      "viewDescription": "Browse transfer processes."
     }
+  ]
+}
 
   edc-connector-config.json: |
     [
       {
-        "connectorName": "Provider",
-        "managementUrl": "https://management.gx-participant1.dil.collab-cloud.eu/management",
-        "defaultUrl": "https://connector.gx-participant1.dil.collab-cloud.eu/api",
-        "protocolUrl": "https://connector.gx-participant1.dil.collab-cloud.eu/protocol",
-        "federatedCatalogEnabled": false,
-        "federatedCatalogUrl": "https://catalog.gx-participant1.dil.collab-cloud.eu/catalog",
-        "did": "did:web:your-provider.example"
+        "connectorName": "gx-participant1",
+        "managementUrl": "https://management.gx-participant1.dil.collab-cloud.eu",
+        "defaultUrl": "https://connector.gx-participant1.dil.collab-cloud.eu",
+        "protocolUrl": "https://connector.gx-participant1.dil.collab-cloud.eu",
+        "federatedCatalogEnabled": true,
+        "federatedCatalogUrl": "https://catalog.gx-participant1.dil.collab-cloud.eu",
+        "did": "did:web:gx-participant1.dil.collab-cloud.eu:identity"
       }
-    }
-
+    ]
   APP_BASE_HREF.txt: |
     /
 
