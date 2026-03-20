@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: edc-datadashboard
+  namespace: edc-datadashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: edc-datadashboard
+  template:
+    metadata:
+      labels:
+        app: edc-datadashboard
+    spec:
+      containers:
+        - name: edc-datadashboard
+          image: REGISTRY/edc-datadashboard:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              name: http
+          volumeMounts:
+            - name: dashboard-config
+              mountPath: /app/config/app-config.json
+              subPath: app-config.json
+            - name: dashboard-config
+              mountPath: /app/config/edc-connector-config.json
+              subPath: edc-connector-config.json
+            - name: dashboard-config
+              mountPath: /app/config/APP_BASE_HREF.txt
+              subPath: APP_BASE_HREF.txt
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+      volumes:
+        - name: dashboard-config
+          configMap:
+            name: edc-datadashboard-config
+
