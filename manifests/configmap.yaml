@@ -61,11 +61,11 @@ data:
     [
       {
         "connectorName": "gx-participant1",
-        "managementUrl": "https://management.gx-participant1.dil.collab-cloud.eu",
+        "managementUrl": "https://connector.gx-participant1.dil.collab-cloud.eu/management",
         "defaultUrl": "https://connector.gx-participant1.dil.collab-cloud.eu",
         "protocolUrl": "https://connector.gx-participant1.dil.collab-cloud.eu",
         "federatedCatalogEnabled": true,
-        "federatedCatalogUrl": "https://catalog.gx-participant1.dil.collab-cloud.eu",
+        "federatedCatalogUrl": "https://connector.gx-participant1.dil.collab-cloud.eu/catalog",
         "did": "did:web:gx-participant1.dil.collab-cloud.eu:identity"
       }
     ]
