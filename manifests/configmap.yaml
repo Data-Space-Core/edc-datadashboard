@@ -70,5 +70,4 @@ data:
       }
     ]
   APP_BASE_HREF.txt: |
-    /
-
+    /dashboard/
