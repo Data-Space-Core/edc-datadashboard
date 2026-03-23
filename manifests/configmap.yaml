@@ -62,6 +62,7 @@ data:
       {
         "connectorName": "gx-participant1",
         "managementUrl": "https://connector.gx-participant1.dil.collab-cloud.eu/management",
+        "apiToken": "password",
         "defaultUrl": "https://connector.gx-participant1.dil.collab-cloud.eu",
         "protocolUrl": "https://connector.gx-participant1.dil.collab-cloud.eu",
         "federatedCatalogEnabled": true,
